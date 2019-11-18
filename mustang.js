@@ -1,10 +1,9 @@
 /*
 	Author: Paul Buldak
 	Class: Web and Distributed Programming
-	Project: Sprint 6 - Mustang v2
-	Description:  This creates version 2 of the mustang contact manager which uses 
-                  server side processing to get a city and state and autocompletion 
-                  to search for the contacts in the list.
+	Project: Sprint 7 - Mustang v3
+	Description: This builds on mustang v2 and allows the user to create, read, 
+    update, and delete contacts on the server.
 */
 
 
@@ -17,7 +16,7 @@ var autocompleteContact = [];
 
 // Writes to the console when the webpage is loaded
 function initApplication() {
-	console.log("Starting Mustang v2...");
+	console.log("Starting Mustang v3...");
 }
 
 // Displays the current contact in the input fields 
