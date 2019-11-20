@@ -421,6 +421,7 @@ function loadNextContact(URL) {
 		console.log("Contact: " + contact.firstName);
 		contactArray.push(contact);
 		loadingContact++;
+        document.getElementById("statusID").innerHTML = "Loading " + contact.firstName + " " + contact.lastName;
 		if(contactURLArray.length > loadingContact) {
 			loadNextContact(contactURLArray[loadingContact]);
 		} else {
