@@ -65,7 +65,7 @@ html, body {
 	display: inline-block;
 	width: 300px;
 	left: 60%;
-	top: 30px;
+	top: 50px;
 }
 .autocomplete-items {
 	position: absolute;
@@ -169,6 +169,10 @@ input[type=text]:focus {
     color: white;
 }
 
+/* Style the status ID parargraph */
+#statusID {
+	padding-left: 5%;
+}
 
 /* Styles the snackbar that appears at bottom when the index 
 	is loaded, the contacts are loaded, and the contacts are 
