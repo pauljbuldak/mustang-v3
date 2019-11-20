@@ -45,6 +45,7 @@ function loadContactsFromServer() {
         if(this.readyState == 4 && this.status == 200) {
             contactArray = JSON.parse(this.responseText);
             showSnackbar("Loaded contacts (" + contactArray.length + ")");
+            renderContact(contactArray);
 
             currentContactIndex = 0;
             viewCurrentContact();
@@ -53,7 +54,6 @@ function loadContactsFromServer() {
 
     xmlhttp.open("GET", "load-contacts.php", true);
     xmlhttp.send();
-    renderContact(contactArray);
 }
 
 
