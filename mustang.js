@@ -19,6 +19,44 @@ function initApplication() {
 	console.log("Starting Mustang v3...");
 }
 
+
+function saveContactsToServer() {
+    console.log("saveContactToServer()");
+    xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function() {
+        if(this.readyState == 4 && this.status == 200) {
+            console.log("Response: " + this.responseText);
+            showSnackbar(this.responseText);
+        }
+    };
+    xmlhttp.open("POST", "save-contacts.php", true);
+    xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xmlhttp.send("contacts=" + JSON.stringify(contactArray));
+}
+
+function loadContactsFromServer() {
+    console.log("loadContactsFromServer()");
+
+    //Clear the current contacts
+    contactArray.length = 0;
+
+    xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function() {
+        if(this.readyState == 4 && this.status == 200) {
+            contactArray = JSON.parse(this.responseText);
+            showSnackbar("Loaded contacts (" + contactArray.length + ")");
+
+            currentContactIndex = 0;
+            viewCurrentContact();
+        }
+    };
+
+    xmlhttp.open("GET", "load-contacts.php", true);
+    xmlhttp.send();
+}
+
+
+
 // Displays the current contact in the input fields 
 function viewCurrentContact() {
     currentContact = contactArray[currentContactIndex];
