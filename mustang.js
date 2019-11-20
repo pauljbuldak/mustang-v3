@@ -53,6 +53,7 @@ function loadContactsFromServer() {
 
     xmlhttp.open("GET", "load-contacts.php", true);
     xmlhttp.send();
+    renderContact(contactArray);
 }
 
 
