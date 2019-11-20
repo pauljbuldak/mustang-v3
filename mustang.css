@@ -38,6 +38,9 @@ html, body {
 .button-update {
 	background-color: #FFA500;
 }
+.button-in-table {
+	width: 100% !important;
+}
 .button:hover {
 	background-color: #005C7A;
 }
@@ -109,12 +112,12 @@ input[type=text] {
 	padding: 6px;
 	transition: 0.5s;
 	outline: none;
-	width: 175px;
+	width: 200px;
 }
 /* Makes the border black and makes the field larger when focused */
 input[type=text]:focus {
 	border: 2px solid black;
-	width: 200px;
+	width: 225px;
 }
 
 
