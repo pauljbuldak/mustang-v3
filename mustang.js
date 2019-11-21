@@ -171,6 +171,7 @@ function add() {
     viewCurrentContact();
     showSnackbar("New contact added");
     renderContact(contactArray);
+    saveContactsToServer();
 }
 
 function remove() {
@@ -189,6 +190,7 @@ function remove() {
     viewCurrentContact();
     showSnackbar("Contact deleted");
     renderContact(contactArray);
+    saveContactsToServer();
 }
 
 // When the user clicks the update button, it replaces the current contact 
@@ -216,6 +218,7 @@ function update() {
     viewCurrentContact();
     showSnackbar("Contact updated");
     renderContact(contactArray);
+    saveContactsToServer();
 }
 
 // Clears the input fields so the user can start typing from blank fields
