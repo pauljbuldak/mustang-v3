@@ -121,6 +121,13 @@ input[type=text]:focus {
 }
 
 
+#inputTable {
+	table-layout: auto;
+}
+#inputTable td {
+	width: 250px;
+}
+
 /* Styles the table for the index */
 #indexTable {
 	visibility: hidden;
