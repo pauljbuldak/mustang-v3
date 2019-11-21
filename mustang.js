@@ -6,6 +6,11 @@
     update, and delete contacts on the server.
 */
 
+// PJB-Todo: Make it load when the page loads
+// PJB-Todo: Make it save when the user exits the page
+// PJB-Todo: 
+
+
 
 var contactURLArray = [];
 var contactArray = [];
@@ -17,6 +22,10 @@ var autocompleteContact = [];
 // Writes to the console when the webpage is loaded
 function initApplication() {
 	console.log("Starting Mustang v3...");
+    loadIndex();
+    loadContacts();
+    logContacts();
+    loadContactsFromServer();
 }
 
 
