@@ -181,7 +181,7 @@ input[type=text]:focus {
 
 /* Style the status ID parargraph */
 #statusID {
-	padding-left: 5%;
+	padding-left: 125px;
 }
 
 /* Styles the snackbar that appears at bottom when the index 
