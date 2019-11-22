@@ -6,11 +6,6 @@
     update, and delete contacts on the server.
 */
 
-// PJB-Todo: Make it load when the page loads
-// PJB-Todo: Make it save when the user exits the page
-// PJB-Todo: 
-
-
 
 var contactURLArray = [];
 var contactArray = [];
@@ -23,12 +18,11 @@ var autocompleteContact = [];
 function initApplication() {
 	console.log("Starting Mustang v3...");
     loadIndex();
-    loadContacts();
-    logContacts();
     loadContactsFromServer();
+    logContacts();
 }
 
-
+// Saves the contacts to the server by doing a POST AJAX call
 function saveContactsToServer() {
     console.log("saveContactToServer()");
     xmlhttp = new XMLHttpRequest();
@@ -43,28 +37,33 @@ function saveContactsToServer() {
     xmlhttp.send("contacts=" + JSON.stringify(contactArray));
 }
 
+// Load the contacts from the server by doing a GET AJAX call
 function loadContactsFromServer() {
     console.log("loadContactsFromServer()");
 
     //Clear the current contacts
     contactArray.length = 0;
-
     xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function() {
         if(this.readyState == 4 && this.status == 200) {
             contactArray = JSON.parse(this.responseText);
             showSnackbar("Loaded contacts (" + contactArray.length + ")");
             renderContact(contactArray);
-
             currentContactIndex = 0;
             viewCurrentContact();
         }
     };
-
     xmlhttp.open("GET", "load-contacts.php", true);
     xmlhttp.send();
 }
 
+function initialzeContacts() {
+    console.log("initialzeContacts()");
+
+    loadContacts();
+    saveContactsToServer();
+    loadContactsFromServer();
+}
 
 
 // Displays the current contact in the input fields 
