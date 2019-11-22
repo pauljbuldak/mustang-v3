@@ -60,9 +60,9 @@ function loadContactsFromServer() {
 function initializeContacts() {
     console.log("initializeContacts()");
 
+    contactArray.length = 0;
     loadContacts();
     saveContactsToServer();
-    loadContactsFromServer();
 }
 
 
