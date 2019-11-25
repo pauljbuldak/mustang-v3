@@ -56,7 +56,7 @@ function loadContactsFromServer() {
     xmlhttp.send();
 }
 
-window.addEventListener("onunload", saveContactsToServer());
+
 
 function initializeContacts() {
     console.log("initializeContacts()");
