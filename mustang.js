@@ -18,6 +18,7 @@ var autocompleteContact = [];
 function initApplication() {
 	console.log("Starting Mustang v3...");
     loadIndex();
+    loadContacts();
     loadContactsFromServer();
     logContacts();
 }
@@ -57,7 +58,7 @@ function loadContactsFromServer() {
     xmlhttp.send();
 }
 
-window.addEventListener("unload", saveContactsToServer());
+window.addEventListener("onunload", saveContactsToServer());
 
 function initializeContacts() {
     console.log("initializeContacts()");
