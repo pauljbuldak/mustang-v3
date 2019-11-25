@@ -56,8 +56,7 @@ function loadContactsFromServer() {
     xmlhttp.send();
 }
 
-
-
+// Loads the inital contact list from the JSON files given in the index
 function initializeContacts() {
     console.log("initializeContacts()");
 
