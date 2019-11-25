@@ -64,7 +64,12 @@ function initializeContacts() {
 
     contactArray.length = 0;
     loadContacts();
-    saveContactsToServer();
+    while(allContactsLoaded == false) {
+        if(allContactsLoaded == true) {
+            saveContactsToServer();
+        }
+    }
+    
 }
 
 
