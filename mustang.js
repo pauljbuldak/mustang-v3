@@ -18,11 +18,7 @@ var autocompleteContact = [];
 function initApplication() {
 	console.log("Starting Mustang v3...");
     loadIndex();
-    loadContacts();
-    logContacts();
-    saveContactsToServer();
-    loadContactsFromServer();
-    
+    loadContactsFromServer();  
 }
 
 // Saves the contacts to the server by doing a POST AJAX call
