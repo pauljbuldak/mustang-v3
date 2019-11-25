@@ -19,6 +19,7 @@ function initApplication() {
 	console.log("Starting Mustang v3...");
     loadIndex();
     loadContactsFromServer();  
+    logContacts();
 }
 
 // Saves the contacts to the server by doing a POST AJAX call
@@ -63,10 +64,7 @@ function initializeContacts() {
 
     contactArray.length = 0;
     loadContacts();
-    if(allContactsLoaded == true) {
-        console.log("saveContactsToServer()");
-        saveContactsToServer();
-    }
+    saveContactsToServer();
 }
 
 
