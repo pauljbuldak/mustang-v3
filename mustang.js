@@ -65,6 +65,10 @@ function initializeContacts() {
 
     contactArray.length = 0;
     loadContacts();
+    if(allContactsLoaded == true) {
+        console.log("saveContactsToServer()");
+        saveContactsToServer();
+    }
 }
 
 
@@ -442,6 +446,7 @@ function loadNextContact(URL) {
 			viewCurrentContact();
             if(contactRequest.readyState == 4 & contactRequest.status == 200) {
                 showSnackbar("All contacts loaded successfully");
+                allContactsLoaded = true;
             } else {
                 showSnackbar("There was a problem with the JSON files");
             }
