@@ -65,7 +65,6 @@ function initializeContacts() {
 
     contactArray.length = 0;
     loadContacts();
-    showSnackbar("Contacts Initialized");
 }
 
 
