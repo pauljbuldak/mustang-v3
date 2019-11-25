@@ -11,7 +11,6 @@ var contactURLArray = [];
 var contactArray = [];
 var loadingContact = 0;
 var currentContactIndex = 0;
-var allContactsLoaded = false;
 var autocompleteContact = [];
 
 // Writes to the console when the webpage is loaded
